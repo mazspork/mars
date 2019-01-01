@@ -1,0 +1,9 @@
+start spl @target
+      add #17,target
+      jmp start
+bomb  dat 0
+target dat 1
+
+
+
+

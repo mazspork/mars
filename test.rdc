@@ -1,0 +1,15 @@
+baz equ 4
+quux equ baz-1
+bar equ quux-1
+foo equ bar-1
+
+xxx   mov #xend-start, yyy
+
+start mov 0 foo
+
+      dat 0
+
+
+yyy dat 0
+xend
+

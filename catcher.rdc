@@ -1,0 +1,33 @@
+value   equ 1
+prison  jmp dungeon
+
+dest    dat #0
+
+start   add #value+2,offset
+        sub #value,dest
+copy    mov offset, trap1    ; korrigerer hop i f‘lden
+        mov trap+1,<dest
+        mov trap,<dest
+        jmz start, counter
+
+        mov #64,counter
+        djn 0,counter
+
+        mov hahaha,here
+        jmp 0
+
+offset  dat #-2
+
+
+trap    jmp @1
+trap1   dat 0
+
+dungeon add #1,counter
+here    spl @0
+        jmp here
+hahaha
+counter dat #0
+
+
+
+

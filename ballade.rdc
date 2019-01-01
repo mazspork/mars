@@ -1,0 +1,10 @@
+lalle equ 17
+
+start add #lalle,target
+
+      sub #lalle,@target
+
+      jmp start
+
+target dat #0
+

@@ -1,0 +1,23 @@
+Redcode MARS Assembler v. 1.1 - (C) 1988 Maz Spork
+
+line  addr  o A-oper B-oper label   opcode  operands
+
+   1 (0011)                 lalle equ 17
+   2                        
+   3  0000  2 0-0011 1-0003 start add #lalle,target
+   4                        
+   5  0001  3 0-0011 2-0002       sub #lalle,@target
+   6                        
+   7  0002  4 1-FFFE 0-0000       jmp start
+   8                        
+   9  0003  0 0-0000 0-0000 target dat #0
+
+
+Code size     =    4h locations
+Start address =    0h relative
+Efficiency    =    4% of stack space used
+
+Symbol Table:
+
+LALLE            = 0011    start            = 0000   
+target           = 0003    

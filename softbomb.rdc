@@ -1,0 +1,28 @@
+; SOFTBOMB (version 2)
+
+OFFSET  DAT     40
+
+START   MOV     #BEND-BALLADE,CNT
+        ADD     #10,OFFSET
+        ADD     OFFSET,DEST
+        MOV     #0,BEND
+LOOP    MOV     <BEND,<DEST
+        DJN     LOOP,CNT
+        SPL     @DEST
+        JMP     START
+
+CNT     DAT     #0
+DEST    DAT     0
+
+; BALLADE-DELEN...
+
+BALLADE ADD     <100,<200
+        MOV     -100,-200
+        ADD     #7,BALLADE
+        ADD     #17,@50
+        ADD     #17,49
+        SPL     <500
+        JMP     BALLADE
+BEND    DAT     0
+
+

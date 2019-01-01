@@ -1,0 +1,36 @@
+Redcode MARS Assembler v. 1.1 - (C) 1988 Maz Spork
+
+line  addr  o A-oper B-oper label   opcode  operands
+
+   1  0000  1 0-0039 1-0008 start mov #57,dest
+   2  0001  3 0-00D5 1-0007 again sub #213,dest
+   3  0002  1 0-0000 1-0008       mov #0,src
+   4  0003  1 0-000A 1-0006       mov #slut-start-1,count
+   5  0004  1 3-0006 3-0004 loop  mov <src,<dest
+   6  0005  7 1-FFFF 1-0004       djn loop, count
+   7  0006  9 0-0000 2-0002       spl @dest
+   8  0007  4 1-FFFA 0-0000       jmp again
+   9  0008  0 0-0000 1-0000 dest  dat 0
+  10  0009  0 0-0000 0-0000 count dat #0
+  11  000A  0 0-0000 1-0000 src   dat 0
+  12                        slut
+  13                        
+  14                              
+  15                        
+  16                        
+  17                        
+  18                        
+  19                        
+  20                        
+
+
+Code size     =    Bh locations
+Start address =    0h relative
+Efficiency    =   10% of stack space used
+
+Symbol Table:
+
+again            = 0001    count            = 0009   
+dest             = 0008    loop             = 0004   
+slut             = 000B    src              = 000A   
+start            = 0000    

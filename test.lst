@@ -1,0 +1,30 @@
+Redcode MARS Assembler v. 1.1 - (C) 1988 Maz Spork
+
+line  addr  o A-oper B-oper label   opcode  operands
+
+   1 (0004)                 baz equ 4
+   2 (0003)                 quux equ baz-1
+   3 (0002)                 bar equ quux-1
+   4 (0001)                 foo equ bar-1
+   5                        
+   6  0000  1 0-0003 1-0003 xxx   mov #xend-start, yyy
+   7                        
+   8  0001  1 1-0000 1-0001 start mov 0 foo
+   9                        
+  10  0002  0 0-0000 1-0000       dat 0
+  11                        
+  12                        
+  13  0003  0 0-0000 1-0000 yyy dat 0
+  14                        xend
+
+
+Code size     =    4h locations
+Start address =    1h relative
+Efficiency    =   12% of stack space used
+
+Symbol Table:
+
+BAR              = 0002    BAZ              = 0004   
+FOO              = 0001    QUUX             = 0003   
+start            = 0001    xend             = 0004   
+xxx              = 0000    yyy              = 0003   

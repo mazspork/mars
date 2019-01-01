@@ -1,0 +1,11 @@
+Redcode MARS Assembler v. 1.1 - (C) 1988 Maz Spork
+
+line  addr  o A-oper B-oper label   opcode  operands
+
+   1  0000  9 0-0000 1-0000 spl 0
+   2  0001  4 1-FFFF 0-0000 jmp -1
+
+
+Code size     =    2h locations
+Start address =    0h relative (assumed)
+Efficiency    =    0% of stack space used

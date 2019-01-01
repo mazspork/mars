@@ -1,0 +1,43 @@
+Redcode MARS Assembler v. 1.1 - (C) 1988 Maz Spork
+
+line  addr  o A-oper B-oper label   opcode  operands
+
+   1                        ; SOFTBOMB (version 2)
+   2                        
+   3  0000  0 0-0000 1-0028 OFFSET  DAT     40
+   4                        
+   5  0001  1 0-0007 1-0008 START   MOV     #BEND-BALLADE,CNT
+   6  0002  2 0-000A 1-FFFE         ADD     #10,OFFSET
+   7  0003  2 1-FFFD 1-0007         ADD     OFFSET,DEST
+   8  0004  1 0-0000 1-000E         MOV     #0,BEND
+   9  0005  1 3-000D 3-0005 LOOP    MOV     <BEND,<DEST
+  10  0006  7 1-FFFF 1-0003         DJN     LOOP,CNT
+  11  0007  9 0-0000 2-0003         SPL     @DEST
+  12  0008  4 1-FFF9 0-0000         JMP     START
+  13                        
+  14  0009  0 0-0000 0-0000 CNT     DAT     #0
+  15  000A  0 0-0000 1-0000 DEST    DAT     0
+  16                        
+  17                        ; BALLADE-DELEN...
+  18                        
+  19  000B  2 3-0064 3-00C8 BALLADE ADD     <100,<200
+  20  000C  1 1-FF9C 1-FF38         MOV     -100,-200
+  21  000D  2 0-0007 1-FFFE         ADD     #7,BALLADE
+  22  000E  2 0-0011 2-0032         ADD     #17,@50
+  23  000F  2 0-0011 1-0031         ADD     #17,49
+  24  0010  9 0-0000 3-01F4         SPL     <500
+  25  0011  4 1-FFFA 0-0000         JMP     BALLADE
+  26  0012  0 0-0000 1-0000 BEND    DAT     0
+  27                        
+
+
+Code size     =   13h locations
+Start address =    1h relative
+Efficiency    =   10% of stack space used
+
+Symbol Table:
+
+ballade          = 000B    bend             = 0012   
+cnt              = 0009    dest             = 000A   
+loop             = 0005    offset           = 0000   
+start            = 0001    

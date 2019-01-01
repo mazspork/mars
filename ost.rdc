@@ -1,0 +1,22 @@
+start mov #57,dest
+again sub #213,dest
+      mov #0,src
+      mov #slut-start-1,count
+loop  mov <src,<dest
+      djn loop, count
+      mov <102,<201
+      spl @dest
+      jmp again
+dest  dat 0
+count dat #0
+src   dat 0
+slut
+
+      
+
+
+
+
+
+
+

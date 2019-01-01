@@ -1,0 +1,19 @@
+start   mov #0, -32
+wait    jmz wait, -33
+        mov #-100, dest
+        mov #count-start-1, count
+        mov #0, src
+loop    mov <src, <dest
+        djn loop, count
+        jmp @dest
+
+dest    dat #0
+src     dat #0
+count   dat #0
+
+
+
+
+
+
+

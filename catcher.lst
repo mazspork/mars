@@ -1,0 +1,50 @@
+Redcode MARS Assembler v. 1.1 - (C) 1988 Maz Spork
+
+line  addr  o A-oper B-oper label   opcode  operands
+
+   1 (0001)                 value   equ 1
+   2  0000  4 1-000F 0-0000 prison  jmp dungeon
+   3                        
+   4  0001  0 0-0000 0-0000 dest    dat #0
+   5                        
+   6  0002  2 0-0003 1-000A start   add #value+2,offset
+   7  0003  3 0-0001 1-FFFE         sub #value,dest
+   8  0004  1 1-0008 1-000A copy    mov offset, trap1    ; korrigerer hop i f‘lden
+   9  0005  1 1-0009 3-FFFC         mov trap+1,<dest
+  10  0006  1 1-0007 3-FFFB         mov trap,<dest
+  11  0007  5 1-FFFB 1-000B         jmz start, counter
+  12                        
+  13  0008  1 0-0040 1-000A         mov #64,counter
+  14  0009  7 1-0000 1-0009         djn 0,counter
+  15                        
+  16  000A  1 1-0008 1-0006         mov hahaha,here
+  17  000B  4 1-0000 0-0000         jmp 0
+  18                        
+  19  000C  0 0-0000 0-FFFE offset  dat #-2
+  20                        
+  21                        
+  22  000D  4 2-0001 0-0000 trap    jmp @1
+  23  000E  0 0-0000 1-0000 trap1   dat 0
+  24                        
+  25  000F  2 0-0001 1-0003 dungeon add #1,counter
+  26  0010  9 0-0000 2-0000 here    spl @0
+  27  0011  4 1-FFFF 0-0000         jmp here
+  28                        hahaha
+  29  0012  0 0-0000 0-0000 counter dat #0
+  30                        
+  31                        
+  32                        
+
+
+Code size     =   13h locations
+Start address =    2h relative
+Efficiency    =   18% of stack space used
+
+Symbol Table:
+
+copy             = 0004    counter          = 0012   
+dest             = 0001    dungeon          = 000F   
+hahaha           = 0012    here             = 0010   
+offset           = 000C    prison           = 0000   
+start            = 0002    trap             = 000D   
+trap1            = 000E    VALUE            = 0001   
